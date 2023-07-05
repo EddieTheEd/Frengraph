@@ -1,0 +1,1 @@
+{"nodes":[{"id":"personA","group":"FriendGroup1"},{"id":"personB","group":"Friendgroup1"}], "links":[{"source":"personA","target":"personB","value":2}]}
