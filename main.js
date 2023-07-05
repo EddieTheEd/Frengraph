@@ -41,23 +41,40 @@ function _chart(d3,data,invalidation)
     .join("line")
       .attr("stroke-width", d => Math.sqrt(d.value));
 
-  const node = svg.append("g")
+      const node = svg.append("g")
       .attr("stroke", "#fff")
       .attr("stroke-width", 1.5)
-    .selectAll("circle")
-    .data(nodes)
-    .join("circle")
+      .selectAll("circle")
+      .data(nodes)
+      .join("circle")
       .attr("r", 5)
       .attr("fill", d => color(d.group));
-
-  node.append("title")
+    
+    node.append("title")
       .text(d => d.id);
-
-  // Add a drag behavior.
-  node.call(d3.drag()
-        .on("start", dragstarted)
-        .on("drag", dragged)
-        .on("end", dragended));
+    
+    // Add node labels
+    const labels = svg.append("g")
+      .attr("class", "node-labels")
+      .selectAll("text")
+      .data(nodes)
+      .join("text")
+      .text(d => d.id)
+      .attr("text-anchor", "middle")
+      .attr("dy", "-0.25em")
+      .attr("fill", "#000")
+      .attr("pointer-events", "none");
+    
+    // Set the position of node labels
+    labels.attr("x", d => d.x)
+      .attr("y", d => d.y);
+    
+    // Add a drag behavior.
+    node.call(d3.drag()
+      .on("start", dragstarted)
+      .on("drag", dragged)
+      .on("end", dragended));
+    
   
   // Set the position attributes of links and nodes each time the simulation ticks.
   simulation.on("tick", () => {
@@ -70,6 +87,8 @@ function _chart(d3,data,invalidation)
     node
         .attr("cx", d => d.x)
         .attr("cy", d => d.y);
+    labels.attr("x", d => d.x)
+        .attr("y", d => d.y);
   });
 
   // Reheat the simulation when drag starts, and fix the subject position.
