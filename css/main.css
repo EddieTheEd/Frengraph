@@ -182,7 +182,6 @@ a{
     display: inline-flex;
     flex-direction: row;
     align-items: center;
-    text-align: center;
 }
 
 #temporaryimage {

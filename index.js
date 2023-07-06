@@ -165,3 +165,5 @@ document.addEventListener('script1Completed', function() {
 })
 
 
+
+close()
