@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
 html {
     background-color: #2E2E2E;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 
@@ -137,4 +140,18 @@ pre, code{
 
 #samplebutton {
     margin: 10px;
+}
+
+#grid2 {
+    display: grid;
+    margin:0 auto;
+    padding: 0;
+    grid-template-columns: 1fr 1fr;
+    max-width: 600px;
+    grid-gap: 10px;
+    color: #FBFAF5;
+}
+
+#specialheader {
+    margin: 0;
 }
