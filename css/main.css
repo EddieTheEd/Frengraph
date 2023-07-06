@@ -175,3 +175,10 @@ a:visited {
 a{
     color: orange;
 }
+
+#headerdiv {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
