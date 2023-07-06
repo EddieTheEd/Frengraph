@@ -14,6 +14,8 @@ document.addEventListener('script1Completed', function() {
 
     const links = data.links.map(d => ({...d}));
     const nodes = data.nodes.map(d => ({...d}));
+    const groups = [...new Set(nodes.map(node => node.group))];
+    console.log(groups)
 
     const width = 500;
     const height = 400;
@@ -57,20 +59,42 @@ document.addEventListener('script1Completed', function() {
     .attr("font-size", "10px")
     .attr("pointer-events", "none");
 
+    const legend = d3.select("#legend");
+
+    const legendtitle = document.getElementById("legendtitle");
+    legendtitle.innerHTML = "Legend Title";
+    legendtitle.style.color = "#FBFAF5";
+
+
+    const legendItems = legend.selectAll("#legend-item")
+      .data(groups)
+      .enter()
+      .append("div")
+      .attr("id", "legend-item");
+    
+    legendItems.append("span")
+      .style("background-color", d => nodes.find(node => node.group === d).color)
+      .attr("id", "legend-color");
+    
+    legendItems.append("span")
+      .text(d => d)
+      .attr("id", "legend-label");
+  
+
     const tick = () => {
     link
-    .attr("x1", d => d.source.x)
-    .attr("y1", d => d.source.y)
-    .attr("x2", d => d.target.x)
-    .attr("y2", d => d.target.y);
+        .attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y);
 
     node
-    .attr("cx", d => d.x)
-    .attr("cy", d => d.y);
+        .attr("cx", d => d.x)
+        .attr("cy", d => d.y);
 
     labels
-    .attr("x", d => d.x)
-    .attr("y", d => d.y);
+        .attr("x", d => d.x)
+        .attr("y", d => d.y);
     };
 
     simulation.on("tick", tick);

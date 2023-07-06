@@ -35,6 +35,16 @@ form
 #graphContainer {
     display: block;
     text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#graph {
+    display: grid;
+    grid-template-columns: 2.5fr 2fr;
+    max-width: 650px;
+    text-align: center;
+    margin: auto;
 }
 
 #howtouse {
@@ -87,7 +97,37 @@ pre, code{
 }
 
 #tryitnow {
+    color: #FBFAF5;
     padding:0;
     margin:0;
     text-align: center;
 }
+
+#tryitnowheader {
+    margin: 0;
+    padding: 0;
+}
+
+#legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    padding-left: 15px;
+  }
+  
+  #legend-color {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+  }
+  
+  #legend-label {
+    font-size: 12px;
+    color: #FBFAF5;
+  }
+  
+
+  #legend{
+    padding-top: 55px;
+    max-width: 150px;
+  }

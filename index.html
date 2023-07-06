@@ -71,19 +71,22 @@
       <li>This file is then given to a d3 script, processing the <code>.json</code> file into a graph!</li>
       <li>The script reads a group's designated hex code and the members of the group to create the "nodes" object. It uses the links to create the "links" object. d3 does the rest!</li>
     </ul>
-    <h2 id="tryitnow">Try it now!</h2>
-    <p id="hint">psst click the button below!</p>
   </div>
   
-  <div id="fileInputDiv">
-    <form>
-      <input type="file" id="fileInput">
-    </form>
+  <div id="tryitnow">
+    <h2 id="tryitnowheader">Try it now!</h2>
+    <p id="hint">psst click the button below!</p>
+    <div id="fileInputDiv">
+      <form>
+        <input type="file" id="fileInput">
+      </form>
+    </div>
   </div>
-
+  
+  
   <div id="graph">
-    <h1 id="graphTitle"></h1>
-    <div id="graphContainer"></div>
+    <div id="graphContainer"><h1 id="graphTitle"></h1></div>
+    <div id="legend"><h3 id="legendtitle"></h3></div>
   </div>
 <script src="./d3.v7.min.js"></script>
 <script src="./index.js" defer></script>
