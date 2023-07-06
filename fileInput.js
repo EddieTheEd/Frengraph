@@ -19,16 +19,17 @@ function convertToJSON(fileContent) {
     const links = [];
     let currentGroup = "";
     let currentColor = "";
+    var linkline = null;
   
     for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim();
+      var line = lines[i].trim();
   
       if (line.startsWith("Group")) {
         const groupInfo = line.split(" - ");
-        console.log(groupInfo)
         currentGroup = groupInfo[0].replace("Group ","").trim();
         currentColor = groupInfo[1].replace(":", "").trim();
       } else if (line === "Links:") {
+        linkline = i;
         break; 
       } else if (line !== "") {
         const personId = line;
@@ -41,8 +42,8 @@ function convertToJSON(fileContent) {
       }
     }
   
-    for (let i = lines.indexOf("Links:") + 1; i < lines.length; i++) {
-      const line = lines[i].trim();
+    for (let i = linkline + 1; i < lines.length; i++) {
+      var line = lines[i].trim();
   
       if (line !== "") {
         const linkInfo = line.split(" - ");
