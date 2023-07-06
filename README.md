@@ -1,5 +1,7 @@
 # Frengraph
 
+![](assets/frengraph.png)
+
 A hacky project using [d3](https://d3js.org/) that was made in roughly a day.
 
 Enjoy!
