@@ -33,8 +33,8 @@ document.addEventListener('script1Completed', function() {
     const groups = [...new Set(nodes.map(node => node.group))];
     console.log(groups)
 
-    const width = 500;
-    const height = 400;
+    const width = 800;
+    const height = 640;
 
     const svg = d3.select("#graphContainer")
         .style("position", "relative")
@@ -84,6 +84,7 @@ document.addEventListener('script1Completed', function() {
     legendtitle.style.color = "#FBFAF5";
     legendtitle.style.margin = "0";
     legendtitle.style.paddingBottom = "10px";
+    legendtitle.style.textAlign = "left";
 
     const legendItems = legend.selectAll("#legend-item")
       .data(groups)

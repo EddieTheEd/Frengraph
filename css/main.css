@@ -3,6 +3,7 @@
 html {
     background-color: #2E2E2E;
     font-family: 'Noto Sans', sans-serif;
+    font-size: 200%;
 }
 
 
@@ -23,7 +24,12 @@ p {
 
 #fileInputDiv {
     display: block;
-    text-align: center;
+}
+
+#fileInput{
+    border:#FBFAF5 3px solid;
+    border-radius: 5px;
+    font-size: 20px;
 }
 
 form
@@ -31,8 +37,6 @@ form
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
-    border:#FBFAF5 1.5px solid;
-    border-radius: 5px;
 }
 
 #graphContainer {
@@ -44,10 +48,11 @@ form
 
 #graph {
     display: grid;
-    grid-template-columns: 2.5fr 2fr;
-    max-width: 650px;
+    grid-template-columns: 2fr 2.5fr 2fr;
+    max-width: 1300px;
     text-align: center;
     margin: auto;
+    align-self: center;
 }
 
 #howtouse {
@@ -65,7 +70,7 @@ form
     list-style-position: inside;
     grid-template-columns: 1fr 1fr;
     color: #FBFAF5;
-    max-width: 600px;
+    max-width: 1200px;
     grid-gap: 10px;
 }
 
@@ -93,14 +98,9 @@ pre, code{
     margin:0 auto;
     text-align: left;
     list-style-position: inside;
-    max-width: 300px;
+    max-width: 600px;
 }
 
-#hint {
-    margin: 0;
-    padding: 5px;
-    color: #404040;
-}
 
 #tryitnow {
     color: #FBFAF5;
@@ -135,7 +135,8 @@ pre, code{
 
 #legend{
     padding-top: 55px;
-    max-width: 150px;
+    max-width: 300px;
+    padding-left: 20px;
 }
 
 #samplebutton {
@@ -147,11 +148,19 @@ pre, code{
     margin:0 auto;
     padding: 0;
     grid-template-columns: 1fr 1fr;
-    max-width: 600px;
+    max-width: 1200px;
     grid-gap: 10px;
     color: #FBFAF5;
 }
 
 #specialheader {
     margin: 0;
+}
+
+#hint {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+    color: #404040;
+    font-size: 20px;
 }
