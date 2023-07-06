@@ -21,12 +21,14 @@ document.addEventListener('script1Completed', function() {
     const height = 400;
 
     const svg = d3.select("#graphContainer")
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height);
-
-    svg.style("border", "2px solid #FBFAF5");
-    svg.style("border-radius", "5px");
+        .style("position", "relative")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .call(d3.zoom().on("zoom", zoomed))
+        .style("border", "2px solid #FBFAF5")
+        .style("border-radius", "5px")
+        .append("g");
 
     const simulation = d3.forceSimulation(nodes)
     .force("link", d3.forceLink(links).id(d => d.id))
@@ -132,6 +134,16 @@ document.addEventListener('script1Completed', function() {
     event.subject.fx = null;
     event.subject.fy = null;
     }
+
+    const zoom = d3.zoom()
+        .scaleExtent([0.5, 2])
+        .on("zoom", zoomed);
+
+    function zoomed(event) {
+        svg.attr("transform", event.transform);
+    }
+
+    d3.select("#graphContainer").call(zoom);
 })
 
 
