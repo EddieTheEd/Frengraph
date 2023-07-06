@@ -7,6 +7,7 @@ function handleFileSelect(event) {
 
   reader.onload = function (event) {
     const fileContent = event.target.result;
+    window.filename = file.name.replace('.txt','');
     convertToJSON(fileContent);
   };
 

@@ -18,7 +18,7 @@ function downloadExampleFile() {
 document.addEventListener('script1Completed', function() {
 
     var graphTitle = document.getElementById("graphTitle");
-    graphTitle.innerHTML = "Graph Title";
+    graphTitle.innerHTML = window.filename;
     graphTitle.style.color = "#FBFAF5";
     graphTitle.style.textAlign = "center";
     graphTitle.style.margin = "0";
