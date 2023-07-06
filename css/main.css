@@ -108,6 +108,7 @@ pre, code{
     padding:0;
     margin:0;
     text-align: center;
+    display: inline-table;
 }
 
 #tryitnowheader {
@@ -151,7 +152,7 @@ pre, code{
     padding: 0;
     grid-template-columns: 1fr 1fr;
     max-width: 1200px;
-    grid-gap: 10px;
+    grid-gap: 20px;
     color: #FBFAF5;
 }
 
@@ -181,4 +182,12 @@ a{
     flex-direction: row;
     align-items: center;
     text-align: center;
+}
+
+#temporaryimage {
+    width: 80%;
+    height: 80%;
+    border: #FBFAF5 3px solid;
+    border-radius: 10px;
+    margin-top: 20px;
 }
