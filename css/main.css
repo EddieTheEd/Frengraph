@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 html {
     background-color: #2E2E2E;
-    font-family: 'Noto Sans', sans-serif;
     font-size: 200%;
+    font-family: 'Quicksand', sans-serif;
 }
 
 
@@ -129,8 +129,9 @@ pre, code{
 }
   
 #legend-label {
-    font-size: 12px;
+    font-size: 20px;
     color: #FBFAF5;
+    text-align: left;
 }
   
 
