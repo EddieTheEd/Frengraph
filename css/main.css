@@ -87,9 +87,10 @@ pre, code{
 }
 
 #comment {
-    color: darksalmon;
+    color: #f62f2f;
     margin: 0;
     padding: 0;
+    padding-left: 10%;
 }
 
 #howdoesitwork {
