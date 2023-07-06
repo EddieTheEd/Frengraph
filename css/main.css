@@ -56,11 +56,14 @@ form
 }
 
 #example {
-    display: table;
+    display: grid;
     margin:0 auto;
     text-align: left;
     list-style-position: inside;
+    grid-template-columns: 1fr 1fr;
     color: #FBFAF5;
+    max-width: 500px;
+    grid-gap: 10px;
 }
 
 #examplecodeblock{
