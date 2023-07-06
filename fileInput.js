@@ -1,6 +1,3 @@
-// script1.js
-
-
 const fileInput = document.getElementById('fileInput');
 fileInput.addEventListener('change', handleFileSelect, false);
 
@@ -10,7 +7,6 @@ function handleFileSelect(event) {
 
   reader.onload = function (event) {
     const fileContent = event.target.result;
-    // Call the function to convert the file content to JSON
     convertToJSON(fileContent);
   };
 
@@ -32,7 +28,7 @@ function convertToJSON(fileContent) {
         currentGroup = groupInfo[0].replace(":", "").trim();
         currentColor = groupInfo[1].replace(":", "").trim();
       } else if (line === "Links:") {
-        break; // Exit the loop when encountering the "Links:" section
+        break; 
       } else if (line !== "") {
         const personId = line;
         const node = {
@@ -54,7 +50,7 @@ function convertToJSON(fileContent) {
         const link = {
           source: source,
           target: target,
-          value: 2 // You can set the value as per your requirement
+          value: 2 
         };
         links.push(link);
       }
@@ -65,36 +61,14 @@ function convertToJSON(fileContent) {
       links: links
     };
   
-    // Convert the JSON data to a string
     const jsonString = JSON.stringify(jsonData);
   
-    // Save the JSON string as a .json file
     saveJSON(jsonString);
   }
   
   
   function saveJSON(jsonString) {
-    // Convert the JSON string to a Blob
-    const blob = new Blob([jsonString], { type: 'application/json' });
-    /*
-    // Create a URL for the Blob
-    const url = URL.createObjectURL(blob);
-  
-    // Create a link element to download the JSON file
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'data.json';
-  
-    // Append the link to the document body and simulate a click to trigger the download
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    */
-  
-    // Store the data globally for access by other scripts
     window.data = JSON.parse(jsonString);
-  
-    // Create and dispatch a custom event to signal completion
     const event = new Event('script1Completed');
     document.dispatchEvent(event);
   }

@@ -5,13 +5,86 @@
 <header>Frengraph</header>
 <body>
   <p>A pretty pointless project made by Ed using <a href="https://d3js.org/">d3</a> to make a cool looking graph!</p>
+  <div id="howtouse">
+    <h2>Rationale</h2>
+    <p>I got bored. I wanted to learn how d3 works cause <a href="https://quartz.jzhao.xyz/">Quartz</a> uses it.</p>
+    <p>So I made this! Thank to Loren for the inspiration.</p>
+    <h2>How do I use it?</h2>
+    <ol>
+    <li>Make a txt file</li>
+    <li>Structure it like the example below</li>
+    <li>Upload</li>
+    <li>Tada!</li>
+    </ol>
+  </div>
 
-<div id="fileInputDiv">
-<form>
-  <input type="file" id="fileInput">
-</form>
-</div>
-<div id="graphContainer"></div>
+  <div id="example">
+    <h2>Formatting for .txt files</h2>
+    <pre id="examplecodeblock">
+      Group1 - #Group1hexcode:
+      PersonId1
+      PersonId2
+      PersonId3
+
+      Group2 - #Group2hexcode:
+      PersonId4
+      PersonId5
+      PersonId6
+
+      Links:
+      PersonId1 - PersonId2
+      PersonId1 - PersonId3
+      PersonId4 - PersonId1
+      <p id="comment">// Reverse links work too!</p>PersonId1 - PersonId5
+      PersonId1 - PersonId6
+      PersonId3 - PersonId4
+      PersonId2 - PersonId3
+    </pre>
+    <h2>Example .txt file</h2>
+    <pre id="examplecodeblock">
+      Group1 - #2f54eb:
+      John Smith
+      Jane Doe
+      Alex Johnson
+      
+      Group2 - #fadb14:
+      Michael Brown
+      Emily Wilson
+      Daniel Lee
+      
+      Links:
+      John Smith - Jane Doe
+      John Smith - Alex Johnson
+      Michael Brown - John Smith
+      John Smith - Emily Wilson
+      John Smith - Daniel Lee
+      Alex Johnson - Michael Brown
+      Jane Doe - Alex Johnson      
+    </pre>
+  </div>
+
+  <div id="howdoesitwork">
+    <h2>How does it work?</h2>
+    <ul>
+      <li>User attaches .txt file.</li>
+      <li><code>.txt</code> file is converted to a <code>.json</code> file with a specific format.</li>
+      <li>This file is then given to a d3 script, processing the <code>.json</code> file into a graph!</li>
+      <li>The script reads a group's designated hex code and the members of the group to create the "nodes" object. It uses the links to create the "links" object. d3 does the rest!</li>
+    </ul>
+    <h2 id="tryitnow">Try it now!</h2>
+    <p id="hint">psst click the button below!</p>
+  </div>
+  
+  <div id="fileInputDiv">
+    <form>
+      <input type="file" id="fileInput">
+    </form>
+  </div>
+
+  <div id="graph">
+    <h1 id="graphTitle"></h1>
+    <div id="graphContainer"></div>
+  </div>
 <script src="./d3.v7.min.js"></script>
 <script src="./index.js" defer></script>
 <link rel="stylesheet" type="text/css" href="./css/main.css">

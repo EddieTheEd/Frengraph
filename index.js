@@ -1,36 +1,36 @@
 
 document.addEventListener('script1Completed', function() {
 
-    // Sample data for disjoint graph
+    var graphTitle = document.getElementById("graphTitle");
+    graphTitle.innerHTML = "Graph Title";
+    graphTitle.style.color = "#FBFAF5";
+    graphTitle.style.textAlign = "center";
+    graphTitle.style.margin = "0";
+    graphTitle.style.padding = "10px";
+
     let data = window.data;
 
     console.log(data);
 
-    // The force simulation mutates links and nodes, so create a copy
-    // so that re-evaluating this cell produces the same result.
     const links = data.links.map(d => ({...d}));
     const nodes = data.nodes.map(d => ({...d}));
 
-    // Set up the dimensions of the graph
     const width = 500;
     const height = 400;
 
-    // Create an SVG container
     const svg = d3.select("#graphContainer")
     .append("svg")
     .attr("width", width)
     .attr("height", height);
 
-    svg.style("border", "2px solid #000");
+    svg.style("border", "2px solid #FBFAF5");
     svg.style("border-radius", "5px");
 
-    // Create a force simulation
     const simulation = d3.forceSimulation(nodes)
     .force("link", d3.forceLink(links).id(d => d.id))
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
 
-    // Create links
     const link = svg.selectAll("line")
     .data(links)
     .enter()
@@ -39,7 +39,6 @@ document.addEventListener('script1Completed', function() {
     .attr("stroke-opacity", 0.6)
     .attr("stroke-width", d => Math.sqrt(d.value));
 
-    // Create nodes
     const node = svg.selectAll("circle")
     .data(nodes)
     .enter()
@@ -47,7 +46,6 @@ document.addEventListener('script1Completed', function() {
     .attr("r", 5)
     .attr("fill", d => d.color);
 
-    // Add labels to nodes
     const labels = svg.selectAll("text")
     .data(nodes)
     .enter()
@@ -59,7 +57,6 @@ document.addEventListener('script1Completed', function() {
     .attr("font-size", "10px")
     .attr("pointer-events", "none");
 
-    // Define tick function for simulation
     const tick = () => {
     link
     .attr("x1", d => d.source.x)
@@ -76,7 +73,6 @@ document.addEventListener('script1Completed', function() {
     .attr("y", d => d.y);
     };
 
-    // Run the simulation and update the graph on each tick
     simulation.on("tick", tick);
 
     node.call(d3.drag()
@@ -90,34 +86,27 @@ document.addEventListener('script1Completed', function() {
     event.subject.fy = event.subject.y;
     }
 
-    // Update the subject (dragged node) position during drag.
     function dragged(event) {
     event.subject.fx = event.x;
     event.subject.fy = event.y;
     }
 
-    // Restore the target alpha so the simulation cools after dragging ends.
-    // Unfix the subject position now that it’s no longer being dragged.
     function dragended(event) {
     if (!event.active) simulation.alphaTarget(0);
     event.subject.fx = null;
     event.subject.fy = null;
     }
 
-    // Update the subject (dragged node) position during drag.
     function dragged(event) {
     event.subject.fx = event.x;
     event.subject.fy = event.y;
     }
 
-    // Restore the target alpha so the simulation cools after dragging ends.
-    // Unfix the subject position now that it’s no longer being dragged.
     function dragended(event) {
     if (!event.active) simulation.alphaTarget(0);
     event.subject.fx = null;
     event.subject.fy = null;
     }
-  
 })
 
 

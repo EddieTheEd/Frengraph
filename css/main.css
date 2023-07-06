@@ -6,8 +6,10 @@ html {
 header{
     font-size: 50px;
     color: #FBFAF5;
+}
+
+header, h2 {
     text-decoration: underline;
-    padding-bottom: 10px;
     text-align: center;
 }
 
@@ -28,4 +30,64 @@ form
     margin-right: auto;
     border:#FBFAF5 1.5px solid;
     border-radius: 5px;
+}
+
+#graphContainer {
+    display: block;
+    text-align: center;
+}
+
+#howtouse {
+    display: table;
+    margin:0 auto;
+    text-align: left;
+    list-style-position: inside;
+    color: #FBFAF5;
+}
+
+#example {
+    display: table;
+    margin:0 auto;
+    text-align: left;
+    list-style-position: inside;
+    color: #FBFAF5;
+}
+
+#examplecodeblock{
+    border: #4a4949 2px solid;
+    border-radius: 3px;
+    text-align: left;
+    padding: 10px;
+    
+}
+
+pre, code{
+    white-space: pre-line;
+}
+
+#comment {
+    color: darksalmon;
+    margin: 0;
+    padding: 0;
+}
+
+#howdoesitwork {
+    color: #FBFAF5;
+    display: table;
+    margin:0 auto;
+    text-align: left;
+    list-style-position: inside;
+    max-width: 300px;
+}
+
+#hint {
+    margin: 0;
+    padding: 5px;
+    color: #404040;
+}
+
+#tryitnow {
+    padding:0;
+    margin:0;
+    text-align: center;
 }
