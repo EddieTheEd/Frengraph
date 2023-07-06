@@ -27,7 +27,7 @@
 </header>
 <body>
   <p>A pretty pointless project made by Ed using <a href="https://d3js.org/">d3</a> to make a cool looking graph!</p>
-  <p><a href="https://github.com/EddieTheEd/Frengraph/">Github Project</a></p>
+  <p>See the <a href="https://github.com/EddieTheEd/Frengraph/">Github Project</a> for the source code!</p>
   <div id="grid2">
     <div>
       <h2>Rationale</h2>
@@ -49,24 +49,21 @@
     <div>
       <h2>Formatting for .txt files</h2>
       <pre id="examplecodeblock">
-        Group Group1Name - #Group1hexcode:
-        PersonId1
-        PersonId2
-        PersonId3
+        <pre id="essential">GroupGroup1Name - #Group1hexcode:</pre> Person1
+        Person2
+        Person3
 
-        Group Group2Name - #Group2hexcode:
-        PersonId4
-        PersonId5
-        PersonId6
+        <pre id="essential">Group Group2Name - #Group2hexcode:</pre>Person4
+        Person5
+        Person6
 
-        Links:
-        PersonId1 - PersonId2
-        PersonId1 - PersonId3
-        PersonId4 - PersonId1
-        <pre id="comment">// Reverse links work too!</pre>PersonId1 - PersonId5
-        PersonId1 - PersonId6
-        PersonId3 - PersonId4
-        PersonId2 - PersonId3
+        <pre id="essential">Links:</pre>Person1 - Person2
+        Person1 - Person3
+        Person4 - Person1
+        <pre id="comment">// Reverse links work too!</pre>Person1 - Person5
+        Person1 - Person6
+        Person3 - Person4
+        Person2 - Person3
       </pre>
     </div>
     <div>
@@ -93,6 +90,11 @@
         Alex Johnson - Jane Doe      
       </pre>
     </div>
+  </div>
+
+  <div id="examplenotes">
+  <p><pre id="essentialnote">Note: Green represents essential things for the .txt file.</pre></p>
+  <p><pre id="redessentialnote">Another Note: Links in the "Links:" section must include people that are listed in any of the groups above.</pre></p>
   </div>
 
   <div id="grid2">
@@ -126,6 +128,8 @@
     <div id="graphContainer"><h2 id="graphTitle"></h1></div>
     <div id="legend"><h3 id="legendtitle"></h3></div>
   </div>
+
+  <p id="footer">Licensed under the <a href=https://raw.githubusercontent.com/EddieTheEd/Frengraph/main/LICENSE>Unlicense</a></p>
 <script src="./d3.v7.min.js"></script>
 <script src="./index.js" defer></script>
 <link rel="stylesheet" type="text/css" href="./css/main.css">
