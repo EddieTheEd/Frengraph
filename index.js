@@ -64,7 +64,8 @@ document.addEventListener('script1Completed', function() {
     const legendtitle = document.getElementById("legendtitle");
     legendtitle.innerHTML = "Legend Title";
     legendtitle.style.color = "#FBFAF5";
-
+    legendtitle.style.margin = "0";
+    legendtitle.style.paddingBottom = "10px";
 
     const legendItems = legend.selectAll("#legend-item")
       .data(groups)
