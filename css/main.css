@@ -62,7 +62,7 @@ form
     list-style-position: inside;
     grid-template-columns: 1fr 1fr;
     color: #FBFAF5;
-    max-width: 500px;
+    max-width: 600px;
     grid-gap: 10px;
 }
 

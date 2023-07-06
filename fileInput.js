@@ -25,7 +25,8 @@ function convertToJSON(fileContent) {
   
       if (line.startsWith("Group")) {
         const groupInfo = line.split(" - ");
-        currentGroup = groupInfo[0].replace(":", "").trim();
+        console.log(groupInfo)
+        currentGroup = groupInfo[0].replace("Group ","").trim();
         currentColor = groupInfo[1].replace(":", "").trim();
       } else if (line === "Links:") {
         break; 

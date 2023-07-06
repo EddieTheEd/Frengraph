@@ -62,7 +62,7 @@ document.addEventListener('script1Completed', function() {
     const legend = d3.select("#legend");
 
     const legendtitle = document.getElementById("legendtitle");
-    legendtitle.innerHTML = "Legend Title";
+    legendtitle.innerHTML = "Legend";
     legendtitle.style.color = "#FBFAF5";
     legendtitle.style.margin = "0";
     legendtitle.style.paddingBottom = "10px";
