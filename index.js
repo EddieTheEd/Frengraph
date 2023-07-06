@@ -66,7 +66,7 @@ document.addEventListener('script1Completed', function() {
     .attr("r", 5)
     .attr("fill", d => d.color);
 
-    /*
+    
     const labels = svg.selectAll("text")
     .data(nodes)
     .enter()
@@ -76,7 +76,7 @@ document.addEventListener('script1Completed', function() {
     .attr("dy", "-0.25em")
     .attr("fill", "#FBFAF5")
     .attr("font-size", "10px")
-    .attr("pointer-events", "none");*/
+    .attr("pointer-events", "none");
 
     const legend = d3.select("#legend");
 
