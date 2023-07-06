@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <head>
   <title>Frengraph</title>
+  <link rel="preload" type="text/css" href="./css/main.css" as="style">
+  <link rel="stylesheet" href="/css/main.css"/>
+
   <meta name="description" content="A cool friendship graph generator">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="./assets/frengraph.ico">
@@ -22,7 +25,7 @@
 <header>
   <div id="headerdiv">
     <img src="./assets/frengraph.png" alt="Icon" width="110px" height="112px">
-    <h1>Frengraph</h2>
+    <h1>Frengraph</h1>
   </div>
 </header>
 <body>
@@ -30,11 +33,11 @@
   <p>A pretty pointless project made by Ed using <a href="https://d3js.org/">d3</a> to make a cool looking graph! See the <a href="https://github.com/EddieTheEd/Frengraph/">Github Project</a> for the source code!</p>
 </div>
   <div id="grid2">
-    <div>
+    <div id="firstgridbox">
       <h2>Rationale</h2>
       <p>I got bored. I wanted to learn how d3 works cause <a href="https://quartz.jzhao.xyz/">Quartz</a> uses it. So I made this! Thank to Loren for the inspiration.</p>
     </div>
-    <div>
+    <div id="firstgridbox">
       <h2>How do I use it?</h2>
       <ol>
       <li>Make a txt file</li>
@@ -132,5 +135,4 @@
   <p id="footer">Licensed under the <a href=https://raw.githubusercontent.com/EddieTheEd/Frengraph/main/LICENSE>Unlicense</a></p>
 <script src="./index.js" defer></script>
 <script defer src="./d3.v7.min.js" defer></script>
-<link rel="stylesheet" type="text/css" href="./css/main.css">
 </body>

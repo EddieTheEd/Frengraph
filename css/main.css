@@ -55,6 +55,10 @@ form
     align-self: center;
 }
 
+#graph > * {
+    aspect-ratio: 1/1; /* Adjust the aspect ratio as needed */
+}
+
 #howtouse {
     display: table;
     margin:0 auto;
@@ -63,20 +67,26 @@ form
     color: #FBFAF5;
 }
 
-#example {
-    display: grid;
-    margin:0 auto;
-    text-align: left;
-    list-style-position: inside;
-    grid-template-columns: 1fr 1fr;
-    color: #FBFAF5;
-    max-width: 1200px;
-    grid-gap: 10px;
+#example > * {
+    aspect-ratio: 1/1; /* Adjust the aspect ratio as needed */
 }
 
+#example {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 0 auto;
+    text-align: left;
+    list-style-position: inside;
+    color: #FBFAF5;
+    max-width: 1200px;
+    grid-gap: 20px;
+}
+
+
+
 #examplecodeblock{
-    border: #4a4949 2px solid;
-    border-radius: 3px;
+    border: #4a4949 4px solid;
+    border-radius: 10px;
     text-align: left;
     padding: 10px;
     
@@ -148,13 +158,14 @@ pre, code{
 
 #grid2 {
     display: grid;
-    margin:0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    margin: 0 auto;
     padding: 0;
-    grid-template-columns: 1fr 1fr;
     max-width: 1200px;
     grid-gap: 20px;
     color: #FBFAF5;
 }
+
 
 #specialheader {
     margin: 0;
@@ -179,9 +190,17 @@ a{
 }
 
 #headerdiv {
-    display: inline-flex;
-    flex-direction: row;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    text-align: center; 
+}
+
+#headerdiv img {
+    width: 110px;
+    height: 112px;
+    object-fit: contain; 
+    margin-right: 10px; 
 }
 
 #temporaryimage {
@@ -218,4 +237,9 @@ a{
     margin: auto;
     text-align: center;
     max-width: 900px;
+}
+
+#firstgridbox {
+    width: 517px;
+    height: 371.66px;
 }
