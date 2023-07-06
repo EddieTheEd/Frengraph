@@ -1,3 +1,19 @@
+function downloadExampleFile() {
+    var element = document.createElement("a");
+    element.setAttribute(
+      "href",
+      "./files/test.txt" 
+    );
+    element.setAttribute("download", "sampledata.txt"); 
+  
+    document.body.appendChild(element);
+  
+    element.click();
+  
+    document.body.removeChild(element);
+  }
+  
+
 
 document.addEventListener('script1Completed', function() {
 

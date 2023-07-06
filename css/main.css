@@ -116,21 +116,25 @@ pre, code{
     align-items: center;
     margin-bottom: 5px;
     padding-left: 15px;
-  }
+}
   
-  #legend-color {
+#legend-color {
     width: 10px;
     height: 10px;
     margin-right: 5px;
-  }
+}
   
-  #legend-label {
+#legend-label {
     font-size: 12px;
     color: #FBFAF5;
-  }
+}
   
 
-  #legend{
+#legend{
     padding-top: 55px;
     max-width: 150px;
-  }
+}
+
+#samplebutton {
+    margin: 10px;
+}
