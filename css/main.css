@@ -1,4 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@font-face {
+    font-family: 'Quicksand';
+    src: url('/assets/Quicksand-Regular.eot');
+    src: url('/assets/Quicksand-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/assets/Quicksand-Regular.woff2') format('woff2'),
+        url('/assets/Quicksand-Regular.woff') format('woff'),
+        url('/assets/Quicksand-Regular.svg#Quicksand-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 html {
     background-color: #2E2E2E;
@@ -7,33 +17,30 @@ html {
 }
 
 
-header{
+header {
     font-size: 50px;
     color: #FBFAF5;
 }
 
-header, h2 {
+header,
+h2 {
     text-decoration: underline;
     text-align: center;
 }
 
 p {
-    color: #FBFAF5; 
+    color: #FBFAF5;
     text-align: center;
 }
 
-#fileInputDiv {
-    display: block;
-}
 
-#fileInput{
-    border:#FBFAF5 3px solid;
+#fileInput {
+    border: #FBFAF5 3px solid;
     border-radius: 5px;
     font-size: 20px;
 }
 
-form
-{
+form {
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
@@ -55,20 +62,22 @@ form
     align-self: center;
 }
 
-#graph > * {
-    aspect-ratio: 1/1; /* Adjust the aspect ratio as needed */
+#graph>* {
+    aspect-ratio: 1/1;
+    /* Adjust the aspect ratio as needed */
 }
 
 #howtouse {
     display: table;
-    margin:0 auto;
+    margin: 0 auto;
     text-align: left;
     list-style-position: inside;
     color: #FBFAF5;
 }
 
-#example > * {
-    aspect-ratio: 1/1; /* Adjust the aspect ratio as needed */
+#example>* {
+    aspect-ratio: 1/1;
+    /* Adjust the aspect ratio as needed */
 }
 
 #example {
@@ -84,15 +93,16 @@ form
 
 
 
-#examplecodeblock{
+#examplecodeblock {
     border: #4a4949 4px solid;
     border-radius: 10px;
     text-align: left;
     padding: 10px;
-    
+
 }
 
-pre, code{
+pre,
+code {
     white-space: pre-line;
 }
 
@@ -106,7 +116,7 @@ pre, code{
 #howdoesitwork {
     color: #FBFAF5;
     display: table;
-    margin:0 auto;
+    margin: 0 auto;
     text-align: left;
     list-style-position: inside;
     max-width: 600px;
@@ -115,8 +125,8 @@ pre, code{
 
 #tryitnow {
     color: #FBFAF5;
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
     text-align: center;
     display: inline-table;
 }
@@ -132,21 +142,21 @@ pre, code{
     margin-bottom: 5px;
     padding-left: 15px;
 }
-  
+
 #legend-color {
     width: 10px;
     height: 10px;
     margin-right: 5px;
 }
-  
+
 #legend-label {
     font-size: 25px;
     color: #FBFAF5;
     text-align: left;
 }
-  
 
-#legend{
+
+#legend {
     padding-top: 55px;
     max-width: 300px;
     padding-left: 20px;
@@ -173,18 +183,17 @@ pre, code{
 
 #hint {
     margin: 0;
-    padding: 0;
     margin-bottom: 10px;
     color: #949292;
     font-size: 20px;
 }
 
-a:visited { 
- text-decoration: none; 
- color: orange;
+a:visited {
+    text-decoration: none;
+    color: orange;
 }
 
-a{
+a {
     color: orange;
     text-decoration: none;
 }
@@ -193,23 +202,16 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center; 
+    text-align: center;
 }
 
 #headerdiv img {
     width: 110px;
     height: 112px;
-    object-fit: contain; 
-    margin-right: 10px; 
+    object-fit: contain;
+    margin-right: 10px;
 }
 
-#temporaryimage {
-    width: 80%;
-    height: 80%;
-    border: #FBFAF5 3px solid;
-    border-radius: 10px;
-    margin-top: 20px;
-}
 
 #essential {
     margin: 0;
@@ -222,7 +224,7 @@ a{
     padding: 0;
     color: #008d00;
     text-align: center;
-    
+
 }
 
 #redessentialnote {
@@ -242,4 +244,17 @@ a{
 #firstgridbox {
     width: 517px;
     height: 371.66px;
+}
+
+#coolbutton {
+    color: black;
+    border: #FBFAF5 3px solid;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #FBFAF5;
+}
+
+#headerlink {
+    color: #FBFAF5;
 }

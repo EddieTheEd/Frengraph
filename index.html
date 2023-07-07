@@ -19,13 +19,11 @@
   <meta property="og:image:width" content="200">
   <meta property="og:image:height" content="200">
   <meta property="twitter:card" content="summary">
-
-  <script src="./fileInput.js" defer></script>
 </head>
 <header>
   <div id="headerdiv">
     <img src="./assets/frengraph.png" alt="Icon" width="110px" height="112px">
-    <h1>Frengraph</h1>
+    <h1><a href="/" id = headerlink>Frengraph</a></h1>
   </div>
 </header>
 <body>
@@ -115,24 +113,14 @@
   <div id="tryitnow">
     <h2 id="specialheader">Try it now!</h2>
     <i id="hint">psst click the button below!</i>
-    <div id="fileInputDiv">
-      <form>
-        <input type="file" id="fileInput">
-      </form>
-    </div>
-    <button id="samplebutton" onclick="downloadExampleFile()">Can't be bothered to make a .txt file?</button>
+    <br>
+    <br>
+    <a id=coolbutton href="./graph.html">Click me :)</a>
+    <br>
     <br>
     <img src="./assets/temp.png" alt="Icon" id="temporaryimage" width="419.59px" height="419.59">
     </div>
   </div>
-  
-  <div id="graph">
-    <div></div>
-    <div id="graphContainer"><h2 id="graphTitle"></h1></div>
-    <div id="legend"><h3 id="legendtitle"></h3></div>
-  </div>
 
   <p id="footer">Licensed under the <a href=https://raw.githubusercontent.com/EddieTheEd/Frengraph/main/LICENSE>Unlicense</a></p>
-<script src="./index.js" defer></script>
-<script defer src="./d3.v7.min.js" defer></script>
 </body>

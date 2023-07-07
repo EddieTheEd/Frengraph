@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+  <title>Frengraph - Graphing!</title>
+  <link rel="preload" type="text/css" href="./css/main.css" as="style">
+  <link rel="preload" type="text/css" href="./css/graph.css" as="style">
+  <link rel="stylesheet" href="./css/main.css"/>
+  <link rel="stylesheet" href="./css/graph.css"/>
+
+  <meta name="description" content="A cool friendship graph generator">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="./assets/frengraph.ico">
+
+  <meta charset="UTF-8">
+  <meta property="og:title" content="Frengraph">
+  <meta property="og:description" content="A cool friendship graph generator">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://frengraph.toomwn.xyz/assets/frengraph.png">
+  <meta property="og:image:url" content="https://frengraph.toomwn.xyz/assets/frengraph.png">
+  <meta property="og:image:alt" content="uh oh image no here?!?!?!">
+  <meta property="og:url" content="https://frengraph.toomwn.xyz/">
+  <meta property="og:image:width" content="200">
+  <meta property="og:image:height" content="200">
+  <meta property="twitter:card" content="summary">
+
+  <script src="./fileInput.js" defer></script>
+</head>
+<header>
+  <div id="headerdiv">
+    <img src="./assets/frengraph.png" alt="Icon" width="110px" height="112px">
+    <h1><a href="/" id = headerlink>Frengraph</a></h1>
+  </div>
+</header>
+<body>
+
+<p>Upload your .txt below!</p>
+<p>Have another .txt file? Just upload it as well! No need to reload!</p>
+
+<div id="fileInputDiv">
+    <form>
+    <input type="file" id="fileInput">
+    </form>
+    <br>
+    <button id="samplebutton" onclick="downloadExampleFile()">Can't be bothered to make a .txt file?</button>
+</div>
+    
+    
+  
+  <div id="graph">
+    <div></div>
+    <div id="graphContainer"><h2 id="graphTitle" style="color:#FBFAF5">No graph here yet...</h2><p>Waiting for a .txt file to be uploaded... :/</p><img src="./assets/temp.png" alt="Icon" id="temporaryimage" width="419.59px" height="419.59"></div>
+    <div id="legend"><h3 id="legendtitle"></h3></div>
+  </div>
+
+  <p id="footer">Licensed under the <a href=https://raw.githubusercontent.com/EddieTheEd/Frengraph/main/LICENSE>Unlicense</a></p>
+<script src="./index.js" defer></script>
+<script defer src="./d3.v7.min.js" defer></script>
+</body>

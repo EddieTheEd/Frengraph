@@ -14,10 +14,9 @@ function downloadExampleFile() {
   }
   
 
+function createGraph() {
+  var graphTitle = document.getElementById("graphTitle");
 
-document.addEventListener('script1Completed', function() {
-
-    var graphTitle = document.getElementById("graphTitle");
     graphTitle.innerHTML = window.filename;
     graphTitle.style.color = "#FBFAF5";
     graphTitle.style.textAlign = "center";
@@ -26,15 +25,13 @@ document.addEventListener('script1Completed', function() {
 
     let data = window.data;
 
-    console.log(data);
 
     const links = data.links.map(d => ({...d}));
     const nodes = data.nodes.map(d => ({...d}));
     const groups = [...new Set(nodes.map(node => node.group))];
-    console.log(groups)
 
-    const width = 800;
-    const height = 640;
+    const width = 1000;
+    const height = 800;
 
     const svg = d3.select("#graphContainer")
         .style("position", "relative")
@@ -162,8 +159,29 @@ document.addEventListener('script1Completed', function() {
     }
 
     d3.select("#graphContainer").call(zoom);
+}
+
+document.addEventListener('script1Completed', function() {
+
+  let graphDiv = document.getElementById("graph");
+  graphDiv.replaceChildren();
+
+  const graph1stDiv = document.createElement("div"); 
+  const graphContainerDiv = document.createElement("div");
+  graphContainerDiv.id = "graphContainer";
+  const graphLegend = document.createElement("div");
+  graphLegend.id = "legend";
+  const graphTitle = document.createElement("h2");
+  graphTitle.id = "graphTitle";
+  const graphLegendTitle = document.createElement("h3");
+  graphLegendTitle.id = "legendtitle";
+  graphContainerDiv.appendChild(graphTitle);
+  graphLegend.appendChild(graphLegendTitle)
+
+  graphDiv.appendChild(graph1stDiv);
+  graphDiv.appendChild(graphContainerDiv);
+  graphDiv.appendChild(graphLegend);
+
+  createGraph();
+
 })
-
-
-
-close()

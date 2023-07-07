@@ -1,30 +1,33 @@
-const fileInput = document.getElementById('fileInput');
-fileInput.addEventListener('change', handleFileSelect, false);
+let fileInputError = false;
 
-function handleFileSelect(event) {
-  const file = event.target.files[0];
-  const reader = new FileReader();
+try {
+  const fileInput = document.getElementById('fileInput');
+  fileInput.addEventListener('change', handleFileSelect, false);
 
-  reader.onload = function (event) {
-    const fileContent = event.target.result;
-    window.filename = file.name.replace('.txt','');
-    convertToJSON(fileContent);
-  };
+  function handleFileSelect(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
 
-  reader.readAsText(file);
-}
+    reader.onload = function (event) {
+      const fileContent = event.target.result;
+      window.filename = file.name.replace('.txt','');
+      convertToJSON(fileContent);
+    };
 
-function convertToJSON(fileContent) {
+    reader.readAsText(file);
+  }
+
+  function convertToJSON(fileContent) {
     const lines = fileContent.split("\n");
     const nodes = [];
     const links = [];
     let currentGroup = "";
     let currentColor = "";
     var linkline = null;
-  
+
     for (let i = 0; i < lines.length; i++) {
       var line = lines[i].trim();
-  
+
       if (line.startsWith("Group")) {
         const groupInfo = line.split(" - ");
         currentGroup = groupInfo[0].replace("Group ","").trim();
@@ -42,10 +45,10 @@ function convertToJSON(fileContent) {
         nodes.push(node);
       }
     }
-  
+
     for (let i = linkline + 1; i < lines.length; i++) {
       var line = lines[i].trim();
-  
+
       if (line !== "") {
         const linkInfo = line.split(" - ");
         const source = linkInfo[0].trim();
@@ -58,38 +61,42 @@ function convertToJSON(fileContent) {
         links.push(link);
       }
     }
-  
+
     const jsonData = {
       nodes: nodes,
       links: links
     };
-  
+
     const jsonString = JSON.stringify(jsonData);
-  
+
     saveJSON(jsonString);
   }
-  
-  
+    
+    
   function saveJSON(jsonString) {
     window.data = JSON.parse(jsonString);
     const event = new Event('script1Completed');
     document.dispatchEvent(event);
 
-    /*
+    /* this downloads the .json file
     const blob = new Blob([jsonString], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
-  
+
     const link = document.createElement('a');
     link.href = url;
     link.download = 'file.json';
-  
+
     document.body.appendChild(link);
-  
+
     link.click();
-  
+
     document.body.removeChild(link);
-  
+
     URL.revokeObjectURL(url);
     */
   }
-  
+}
+
+catch(err){
+  fileInputError = true;
+}
