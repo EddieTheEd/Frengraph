@@ -1,23 +1,55 @@
-let fileInputError = false;
 
-try {
-  const fileInput = document.getElementById('fileInput');
-  fileInput.addEventListener('change', handleFileSelect, false);
+const fileInput = document.getElementById('fileInput');
+fileInput.addEventListener('change', handleFileSelect, false);
 
-  function handleFileSelect(event) {
-    const file = event.target.files[0];
-    const reader = new FileReader();
+function fileInputErrorDetected(){
+  let graphDiv = document.getElementById("graph");
+  graphDiv.replaceChildren();
 
-    reader.onload = function (event) {
-      const fileContent = event.target.result;
-      window.filename = file.name.replace('.txt','');
-      convertToJSON(fileContent);
-    };
+  const graph1stDiv = document.createElement("div"); 
+  const graphContainerDiv = document.createElement("div");
+  graphContainerDiv.id = "graphContainer";
+  const graphLegend = document.createElement("div");
+  graphLegend.id = "legend";
+  const graphTitle = document.createElement("h2");
+  graphTitle.innerHTML = "Upload Error..."
+  graphTitle.style.color = "#FBFAF5";
+  graphTitle.id = "graphTitle";
+  const graphLegendTitle = document.createElement("h3");
+  graphLegendTitle.id = "legendtitle";
+  graphContainerDiv.appendChild(graphTitle);
+  graphLegend.appendChild(graphLegendTitle);
+  const grapherrortext = document.createElement("p");
+  grapherrortext.innerHTML = "Probably a formatting issue? Please check again. Alternatively check the console!"
+  graphContainerDiv.appendChild(grapherrortext)
 
-    reader.readAsText(file);
+  graphDiv.appendChild(graph1stDiv);
+  graphDiv.appendChild(graphContainerDiv);
+  graphDiv.appendChild(graphLegend);
+
+}
+
+function handleFileSelect(event) {
+  try {
+  const file = event.target.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function (event) {
+    const fileContent = event.target.result;
+    window.filename = file.name.replace('.txt','');
+    convertToJSON(fileContent);
+  };
+
+  reader.readAsText(file);
   }
+  catch(error){
+    fileInputErrorDetected()
+  }
+}
 
-  function convertToJSON(fileContent) {
+function convertToJSON(fileContent) {
+
+  try {
     const lines = fileContent.split("\n");
     const nodes = [];
     const links = [];
@@ -68,35 +100,40 @@ try {
     };
 
     const jsonString = JSON.stringify(jsonData);
-
     saveJSON(jsonString);
+
   }
-    
-    
-  function saveJSON(jsonString) {
+  catch(error){
+    fileInputErrorDetected()
+  }
+
+
+}
+  
+  
+function saveJSON(jsonString) {
+  try{
     window.data = JSON.parse(jsonString);
     const event = new Event('script1Completed');
     document.dispatchEvent(event);
-
-    /* this downloads the .json file
-    const blob = new Blob([jsonString], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'file.json';
-
-    document.body.appendChild(link);
-
-    link.click();
-
-    document.body.removeChild(link);
-
-    URL.revokeObjectURL(url);
-    */
   }
-}
+  catch(error){
+    fileInputErrorDetected()
+  }
+  /* this downloads the .json file
+  const blob = new Blob([jsonString], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
 
-catch(err){
-  fileInputError = true;
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'file.json';
+
+  document.body.appendChild(link);
+
+  link.click();
+
+  document.body.removeChild(link);
+
+  URL.revokeObjectURL(url);
+  */
 }
