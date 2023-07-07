@@ -1,36 +1,5 @@
 <!DOCTYPE html>
 <head>
-
-  <script>
-  window.addEventListener('pageshow', function(event) {
-  // Close existing WebSocket connections
-  if (typeof websocket !== 'undefined' && websocket.readyState === WebSocket.OPEN) {
-    websocket.close();
-  }
-  
-  // Reestablish WebSocket connection
-  websocket = new WebSocket('wss://frengraph.toomwn.xyz:8000/index.html/ws');
-  
-  // Set up event handlers for the WebSocket connection
-  websocket.onopen = function() {
-    // Code to handle WebSocket connection open event
-  };
-  
-  websocket.onmessage = function(event) {
-    // Code to handle WebSocket message event
-  };
-  
-  websocket.onclose = function(event) {
-    // Code to handle WebSocket close event
-  };
-  
-  websocket.onerror = function(error) {
-    // Code to handle WebSocket error event
-  };
-});
-
-  </script>
-
   <title>Frengraph</title>
   <link rel="preload" type="text/css" href="./css/main.css" as="style">
   <link rel="stylesheet" href="./css/main.css"/>
