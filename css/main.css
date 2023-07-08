@@ -28,7 +28,7 @@ h2 {
     text-align: center;
 }
 
-p {
+p, h2 {
     color: #FBFAF5;
     text-align: center;
 }

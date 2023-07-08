@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="./css/main.css"/>
   <link rel="stylesheet" href="./css/graph.css"/>
 
+  <link rel="preload" href="./externaljs/d3.v7.min.js" as="script">
+
   <meta name="description" content="A cool friendship graph generator">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="./assets/frengraph.ico">
@@ -42,8 +44,6 @@
     <br>
     <button id="samplebutton" onclick="downloadExampleFile()">Can't be bothered to make a .txt file?</button>
 </div>
-    
-    
   
   <div id="graph">
     <div></div>
@@ -51,7 +51,36 @@
     <div id="legend"><h3 id="legendtitle"></h3></div>
   </div>
 
+  <div id="infodiv">
+    <h2>Additional Info</h2>
+    <div><h3>People</h3>
+      <div id="people">
+        <p></p>
+        <p>People from the graph will be listed here.</p>
+        <p></p>
+      </div>
+    </div>
+    <h2>Friendship Leaderboard</h2>
+    <div id="linkleaderboard" >
+      <p>Submit a file for a leaderboard to be made!</p>
+    </div>
+    <h2>Frenpath</h2>
+    <div id="choosefrensbig">
+      <div></div>
+    <div id="choosefrens">
+      <input type="text" id="input1" placeholder="Person 1">
+      <input type="text" id="input2" placeholder="Person 2">
+      <button id="submitBtn">Find frenpath!</button>
+      <br>
+      <p id="choosefrenstext">Please check the list above and use the exact name outputted.</p>
+      <p id="frenpath"></p>
+    </div> 
+    <div></div>
+    </div>   
+  </div>
+
   <p id="footer">Licensed under the <a href=https://raw.githubusercontent.com/EddieTheEd/Frengraph/main/LICENSE>Unlicense</a></p>
-<script src="./index.js" defer></script>
-<script defer src="./d3.v7.min.js" defer></script>
+  <script src="./externaljs/d3.v7.min.js" ></script>
+  <script src="./index.js" ></script>
+  <script src="./pathing.js"></script>
 </body>

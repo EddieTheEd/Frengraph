@@ -15,6 +15,13 @@ function downloadExampleFile() {
   
 
 function createGraph() {
+  try {
+    frenpath = document.getElementById("frenpath");
+    frenpath.innerHTML = ""
+  }
+  catch(error){
+  
+  }
   var graphTitle = document.getElementById("graphTitle");
 
     graphTitle.innerHTML = window.filename;
@@ -183,5 +190,6 @@ document.addEventListener('script1Completed', function() {
   graphDiv.appendChild(graphLegend);
 
   createGraph();
-
+  const event = new Event('readyforpathing');
+  document.dispatchEvent(event);
 })
