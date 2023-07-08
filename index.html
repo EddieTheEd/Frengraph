@@ -34,6 +34,7 @@
 <body>
   <div>
   <p>A pretty pointless project made by Ed using <a href="https://d3js.org/">d3</a> to make a cool looking graph! <br> See the <a href="https://github.com/EddieTheEd/Frengraph/">Github Project</a> for the source code!</p>
+  <p>Additionally, I used the <a href="https://en.wikipedia.org/wiki/Breadth-first_search">Breadth-first search (BFS) algorithm</a> for the "Frenpath" section.</p>
   </div>
   <div id="grid2">
     <div id="firstgridbox">
@@ -111,13 +112,15 @@
       <li><code>.txt</code> file is converted to a <code>.json</code> file with a specific format.</li>
       <li>This file is then given to a d3 script, processing the <code>.json</code> file into a graph!</li>
       <li>The script reads a group's designated hex code and the members of the group to create the "nodes" object. It uses the links to create the "links" object. d3 does the rest!</li>
-      <li>Script also reads file name, and makes it the graph title.</li>
+      <li>Using the Breadth-first search algorithm, the shortest path between two people can be calculated.</li>
     </ul>
   </div>
   
   <div id="tryitnow">
     <h2 id="specialheader">Try it now!</h2>
+    <br>
     <i id="hint">psst click the button below!</i>
+    <br>
     <br>
     <br>
     <a id=coolbutton href="./graph.html">Click me :)</a>
